@@ -1,0 +1,121 @@
+.cd-dropdown, .cd-select {
+  display: block;
+  position: relative;
+  width: 200px;
+  margin-bottom: 28px;
+}
+
+.cd-dropdown > span {
+	width: 100%;
+	height: 35px;
+	line-height: 34px;
+	color: #999;
+	font-weight: normal;
+	font-size: 16px;
+	background: #fff;
+	display: block;
+	padding: 0 20px 0 10px;
+	position: relative;
+	cursor: pointer;
+	border:1px solid #CCCCCC
+}
+
+.cd-dropdown > span::after {
+  border-left: 1px solid #ddd;
+  content: "▼";
+  font-size: 12px;
+  height: 70%;
+  line-height: 3px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 15%;
+  width: 34px;
+}
+
+.cd-dropdown.cd-active > span:after {
+	content: '\25B2';
+}
+
+.cd-dropdown ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	position: relative;
+}
+
+.cd-dropdown ul li {
+	display: block;
+}
+
+.cd-dropdown ul li span {
+	width: 100%;
+	background: #fff;
+	line-height: 35px;
+	padding: 0 30px 0 20px;
+	display: block;
+	color: #34495e;
+	cursor: pointer;
+}
+
+.cd-dropdown > span,
+.cd-dropdown ul li span {
+	-webkit-backface-visibility: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.cd-dropdown > span span[class^="icon-"],
+.cd-dropdown > span span[class*=" icon-"]{
+	padding: 0 0px 0 0px;
+}
+
+/* Select fallback styling */
+.cd-select {
+	border: 1px solid #ddd;
+}
+
+
+.cd-dropdown ul {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+
+.cd-dropdown > span,
+.cd-dropdown ul li {
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.cd-dropdown ul li {
+	position: absolute;
+	width: 100%;
+	pointer-events: none;
+}
+
+.cd-active.cd-dropdown > span {
+	color: #34495e;
+}
+
+.cd-active.cd-dropdown ul li {
+	pointer-events: auto;
+}
+
+.cd-active.cd-dropdown ul li span {
+	-webkit-transition: all 0.2s linear 0s;
+	-moz-transition: all 0.2s linear 0s;
+	-ms-transition: all 0.2s linear 0s;
+	-o-transition: all 0.2s linear 0s;
+	transition: all 0.2s linear 0s;
+}
+
+.cd-active.cd-dropdown ul li span:hover {
+	background: #1abc9c;
+	color: #fff;
+}

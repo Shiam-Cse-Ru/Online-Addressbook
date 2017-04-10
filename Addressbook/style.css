@@ -1,0 +1,376 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('fonts/Raleway.eot');
+  src: url('fonts/Raleway.eot?#iefix') format('embedded-opentype'), url('fonts/Raleway.woff') format('woff'), url('fonts/Raleway.ttf') format('truetype'), url('fonts/Raleway.svg#Raleway') format('svg');
+}
+body {
+  background: rgba(0, 0, 0, 0) url("images/stardust.png") repeat scroll 0 0 / cover ;
+  margin:10px 0;
+  font-family: 'Raleway';
+}
+::selection{
+	background-color:#1ABC9C;
+	color:#fff;
+}
+::-moz-selection{
+	background-color:#1ABC9C;
+	color:#fff;
+}
+@media (min-width:1200px){.container{width:1100px}} 
+.container{
+	background-color:#FFF;
+}
+label{
+	cursor:pointer
+}
+.login-body{
+	background:none;
+	background-color:#fff
+}
+/*============ Colours ================*/
+.color-1{
+  border: 2px solid #e74c3c;
+}
+.color-1-bg{
+  background-color:#e74c3c;
+}
+.color-2{
+	border:2px solid #1abc9c;
+}
+.color-2-bg{
+	background-color:#1abc9c;
+}
+.color-3{
+	border:2px solid #3498db;
+}
+.color-3-bg{
+	background-color:#3498db;
+}
+.color-4{
+	border:2px solid #9b59b6;
+}
+.color-4-bg{
+	background-color:#9b59b6;
+}
+.logo::first-letter {
+  font-size: 37px;
+  font-weight: bold;
+}
+
+.logo {
+  background-color: #fff;
+  font-size: 30px;
+  margin: 0;
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+.custom-toggle {
+  margin: 23px 10px;
+}
+.custom-toggle button{
+	text-transform:capitalize;
+}
+.header{
+	text-align:center;
+}
+.menu:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.menu {
+  background-color: #1abc9c;
+  border-bottom: 4px solid #E74C3C;
+  color: #fff;
+  width:100%;
+  overflow:hidden
+}
+.menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	border-width:1px 0;
+}
+.menu ul li{
+	display:inline;
+	float:left;
+	transition:0.7s;
+	-webkit-transition:0.7s;
+}
+
+.menu ul li a{
+	color:#fff;
+	padding:10px 20px;
+	display:inline-block;
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:13px;
+	transition:0.7s;
+	-webkit-transition:0.7s;
+}
+.menu ul li:hover a{
+	background-color:#E74C3C;
+}
+.disable {
+  cursor: not-allowed;
+}
+.current-menu-item{
+	background-color:#E74C3C;
+}
+.custom-home {
+  margin-top: 27px;
+  min-height: 207px;
+  overflow: hidden;
+  position:relative
+  
+}
+.custom-home h2 {
+  margin-top: 80px;
+  text-align: center;
+}
+.home-caption{
+	position:absolute;
+	left:0;
+	top:-100%;
+	height:100%;
+	width:100%;
+	text-align:center;
+	-webkit-transition:all 0.7s cubic-bezier(.62,-0.4,.48,1.57) 0s;
+	transition:all 0.7s cubic-bezier(.62,-0.4,.48,1.57) 0s;
+}
+.home-caption h4{
+	position:relative;
+	top:40%;
+	color:#fff
+}
+.custom-home:hover .home-caption{
+	top:0
+}
+.content:after{
+	content:'';
+	clear:both;
+	display:block
+}
+.content {
+  border: 2px solid #1abc9c;
+  border-radius: 5px;
+  margin: 30px auto 60px;
+  padding: 30px;
+}
+
+.content p {
+  background-color: #1abc9c;
+  box-shadow: 0 0 4px 0 #1abc9c;
+  color: #fff;
+  font-size: 17px;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+  text-transform: capitalize;
+  text-align:center;
+}
+.content ol{
+	margin:0;
+	padding:0;
+	list-style:inside
+}
+.content ol li{}
+.footer-bg{
+	background-color:#34495e;
+}
+.footer p{
+	padding:40px 0;
+	margin:0;
+	color:#fff
+}
+.select_op {
+  display: block;
+  padding: 8px;
+}
+
+.form-control{
+	border-radius:0
+}
+.btn-submit {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+  border-radius: 0;
+  border-width: 2px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  color:#fff;
+  transition:0.7s;
+  -webkit-transition:0.7s;
+}
+.btn-submit:hover{
+	background-color: #fff;
+	color:#1abc9c;
+	border-color: #1abc9c;
+}
+.table thead tr{
+	border-top:2px solid #2980b9;
+	border-color:#2980b9;
+}
+.table thead  tr th{
+border-color:#2980b9;
+text-align:center;
+}
+.table tbody tr i{
+	color:blue;
+	cursor:pointer
+}
+.table tbody tr td{
+	text-align:center;
+}
+.table tbody tr th{
+	text-align:center;
+}
+.cros {
+  background-color: #e67e22;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 19px;
+  position: absolute;
+  right: 0;
+  text-transform: lowercase;
+  top: 0;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+}
+.cros:hover{
+	background-color:red;
+}
+.extra-content{
+	width:100%;
+}
+.table thead{
+	background-color:#2980b9;
+	color:#fff;
+	
+}
+.table tr{
+	padding:5px 0
+}
+
+@media (min-width: 992px) {
+ .login-form{
+	width:50%;
+	margin:20px auto 20px;
+	
+}
+}
+.login-container{
+	padding-top:50px
+}
+.right{
+	float:right;
+	display:inline-block;
+	color:#fff !important
+}
+.right:hover{
+	color:#1ABC9C !important
+}
+.register{
+	display:none
+}
+section.content:after{
+	content:'';
+	display:none;
+	clear:both
+}
+.toggle{
+	    cursor: pointer;
+    float: right;
+    position: relative;
+    top: -40px;
+}
+#chpass{
+	display:none
+}
+.modal-body ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.modal-body ul li{
+	display:block;
+	border-bottom:1px solid #ddd
+}
+.modal-body ul li:last-child{
+	border-bottom:none
+}
+.modal-body ul li:first-child h4{
+	font-size:20px
+}
+.modal-body ul li h4 {
+  color: #808080;
+  font-size: unset;
+  line-height: 28px;
+}
+.modal-body ul li h4 span {
+  color: #1abc9c;
+  display: inline-block;
+  text-transform:uppercase
+}
+.close {
+  color: #fff;
+  opacity:1;
+  text-shadow:none
+}
+.close:hover{
+	color:#E74C3C
+}
+.modal-header {
+  background-color: #1ac2be;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+}
+@media (max-width:600px){
+	.content{
+		padding:5px
+	}
+}
+.e-message {
+  padding-right: 48px !important;
+}
+.mehedi-right{
+	float:right
+}
+.mehedi-right a{
+	color:#E74C3C
+}
+.mehedi-right a:hover{
+	color:#1ABC9C
+}
+.top-text p {
+	text-align:center
+}
+.forgot-pass p{
+	display:none;
+}
+.forgot-pass{
+	text-align:center;
+	cursor:pointer;
+	position:relative
+}
+.forgot-pass:hover p{
+	color:red
+}
+.for-pass {
+  background-color: #1abc9c;
+  box-shadow: 0 0 4px #1abc9c;
+  display: none;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+.for-pass label{
+	color:#fff;
+}
+.for-pass button{
+	border-color:#fff;
+}
+.fff{
+	color:red !important
+}
