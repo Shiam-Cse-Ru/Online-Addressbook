@@ -54,7 +54,7 @@ if(!$_SESSION['username'])
 				
 				<div class="menu">
 					<ul>
-						<li><a href="home.php">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a href="insert.php">Insert</a></li>
 						<li class="current-menu-item"><a href="view.php">View</a></li>
 					</ul>
@@ -67,22 +67,18 @@ if(!$_SESSION['username'])
 				</div>
 				<div class="col-md-12">
 					<div class="content">
-
 						<p>View all your details</p>
 						
 						<table class="table table-striped">
 						  <thead>
 							<tr>
-							  <th>FirstName</th>
-							   <th>LastName</th>
-							    <th>Qualification</th>
+							  <th>Name</th>
 							  <th>Number</th>
 							  <th>Email</th>
 							   <th>Address</th>
 							  <th>Action</th>
 							</tr>
 						  </thead>
-
 						  <tbody>
 						  
 
@@ -99,19 +95,15 @@ if(!$_SESSION['username'])
 							while($row = mysqli_fetch_array($result)){
 								?>
 							<tr>
-							  <th><?php echo $row['firstname'];?></th>
-							    <th><?php echo $row['lastname'];?></th>
-							  <td><?php echo $row['qualification'];?></td>
+							  <th><?php echo $row['name'];?></th>
 							  <td><?php echo $row['number'];?></td>
 							   <th><?php echo $row['email'];?></th>
 							  <td><?php echo $row['address'];?></td>
-
 							  <td>
 								<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a>
 								 | <a href="#"  data-toggle="modal" data-target="#mehedi<?php echo $row['id'];?>">View All</a>
 								 | <a href="delete.php?id=<?php echo $row['id'];?>">Delete</a>
 							  </td>
-
 							</tr>
 
 								<!-- Modal -->
@@ -124,9 +116,7 @@ if(!$_SESSION['username'])
 									  </div>
 									  <div class="modal-body">
 										<ul>
-											<li><h4><span>FirstName : </span> <?php echo $row['firstname'];?></h4></li>
-											<li><h4><span>LastName : </span> <?php echo $row['lastname'];?></h4></li>
-											<li><h4><span>Qualification : </span> <?php echo $row['qualification'];?></h4></li>
+											<li><h4><span>Name : </span> <?php echo $row['name'];?></h4></li>
 											<li><h4><span>Number : </span> <?php echo $row['number'];?></h4></li>
 											<li><h4><span>Email : </span> <?php echo $row['email'];?></h4></li>
 											<li><h4><span>Address : </span> <?php echo $row['address'];?></h4></li>
@@ -145,11 +135,7 @@ if(!$_SESSION['username'])
 							
 						
 						  </tbody>
-
 						</table>
-						<form action="php_csv_export.php" method="post">
-					<input type="submit" name="submit" value="Download" type="button" class="btn btn-primary active">
-						</form>
 					</div>
 				</div>
 				<div class="col-md-12 footer-bg">
