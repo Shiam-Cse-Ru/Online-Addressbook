@@ -79,8 +79,8 @@ label{
 	clear:both;
 }
 .menu {
-  background-color: #1abc9c;
-  border-bottom: 4px solid #E74C3C;
+  background-color: #4183D7;
+  border-bottom: 4px solid #336E7B;
   color: #fff;
   width:100%;
   overflow:hidden
@@ -109,13 +109,13 @@ label{
 	-webkit-transition:0.7s;
 }
 .menu ul li:hover a{
-	background-color:#E74C3C;
+	background-color:#26A65B;
 }
 .disable {
   cursor: not-allowed;
 }
 .current-menu-item{
-	background-color:#E74C3C;
+	background-color:#1abc9c;
 }
 .custom-home {
   margin-top: 27px;
@@ -159,7 +159,7 @@ label{
 }
 
 .content p {
-  background-color: #1abc9c;
+  background-color: #3498DB;
   box-shadow: 0 0 4px 0 #1abc9c;
   color: #fff;
   font-size: 17px;
@@ -308,7 +308,7 @@ section.content:after{
   line-height: 28px;
 }
 .modal-body ul li h4 span {
-  color: #1abc9c;
+  color: #4183D7;
   display: inline-block;
   text-transform:uppercase
 }
@@ -321,7 +321,7 @@ section.content:after{
 	color:#E74C3C
 }
 .modal-header {
-  background-color: #1ac2be;
+  background-color: #4183D7;
   border-radius: 5px 5px 0 0;
   color: #fff;
 }
