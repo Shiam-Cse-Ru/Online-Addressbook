@@ -14,20 +14,36 @@ if(!$_SESSION['username'])
 
 
 if(isset($_POST["submit"])){
-	$name= $_POST["name"];
+	$firstname= $_POST["firstname"];
+	$lastname=$_POST['lastname'];
+    $qualification=$_POST['qualification'];
 	$number= $_POST["number"];
 	$email= $_POST["email"];
 	 // date_default_timezone_set('Asia/Dacca');
 	// $time=getdate();
 	$address=$_POST['address'];
 
-	if($name=='')
+	if($firstname=='')
     {
         //javascript use for input checking
-        echo"<script>alert('Please enter the name')</script>";
+        echo"<script>alert('Please enter the firstname')</script>";
 exit();//this use if first is not work then other will not show
     }
 
+	if($lastname=='')
+    {
+        //javascript use for input checking
+        echo"<script>alert('Please enter the lastnname')</script>";
+exit();//this use if first is not work then other will not show
+    }
+
+
+	if($qualification=='')
+    {
+        //javascript use for input checking
+        echo"<script>alert('Please enter the qualification')</script>";
+exit();//this use if first is not work then other will not show
+    }
 		    if($number==''){
     
  echo"<script>alert('Please enter the number')</script>";
@@ -55,7 +71,7 @@ exit();//this use if first is not work then other will not show
   $identified = mysqli_query($dbcon,"SELECT id FROM admin WHERE user_name = '$username'");
   $row = mysqli_fetch_array($identified);
  $data=$row['id'];
-  $insert_data="insert into detail (identified,name,number,email,address) VALUE ('$data' ,'$name','$number','$email','$address')";
+  $insert_data="insert into detail (identified,firstname,lastname,qualification,number,email,address) VALUE ('$data' ,'$firstname','$lastname','$qualification','$number','$email','$address')";
     if(mysqli_query($dbcon,$insert_data))
     {
         echo"<script>window.open('view.php','_self')</script>";
@@ -109,7 +125,7 @@ exit();//this use if first is not work then other will not show
 				
 				<div class="menu">
 					<ul>
-						<li><a href="index.php">Home</a></li>
+						<li><a href="home.php">Home</a></li>
 						<li class="current-menu-item"><a href="insert.php">Insert</a></li>
 						<li><a href="view.php">View</a></li>
 					</ul>
@@ -140,20 +156,28 @@ exit();//this use if first is not work then other will not show
 						
 						<form action="insert.php" method="POST">
 						  <div class="form-group">
-							<label for="exampleInputName">Name</label>
-							<input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter Your Name" required="required">
+							<label for="exampleInputName">FirstName</label>
+							<input type="text" name="firstname" class="form-control" id="exampleInputName" placeholder="Enter First Name" required="required">
+						  </div>
+						   <div class="form-group">
+							<label for="exampleInputName">LastName</label>
+							<input type="text" name="lastname" class="form-control" id="exampleInputName" placeholder="Enter Last Name" required="required">
+						  </div>
+						   <div class="form-group">
+							<label for="exampleInputName">Qualification</label>
+							<input type="text" name="qualification" class="form-control" id="exampleInputName" placeholder="Enter Qualification" required="required">
 						  </div>
 						  <div class="form-group">
 							<label for="exampleInputp-number">Phone Number</label>
-							<input type="number" name="number" class="form-control" id="exampleInputp-number" placeholder="Enter your Phone Number" required="required">
+							<input type="number" name="number" class="form-control" id="exampleInputp-number" placeholder="Enter Phone Number" required="required">
 						  </div>
 						  <div class="form-group">
 							<label for="exampleInputEmail">Email</label>
-							<input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Enter Your Email">
+							<input type="email" name="email" class="form-control" id="exampleInputEmail" placeholder="Enter Email">
 						  </div>
 						   <div class="form-group">
 							<label for="exampleInputEmail">Address</label>
-							<input type="text" name="address" class="form-control" id="exampleInputEmail" placeholder="Enter Your Email">
+							<input type="text" name="address" class="form-control" id="exampleInputEmail" placeholder="Enter Address">
 						  </div>
 						  
 						  <button type="submit" name="submit" class="btn btn-default btn-submit">Submit</button>
