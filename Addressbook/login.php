@@ -3,7 +3,7 @@
 session_start();
 $dbcon=mysqli_connect("localhost","root","");
 
-mysqli_select_db($dbcon,"Phonebook");
+mysqli_select_db($dbcon,"addressbook");
 
 
 if(isset($_POST['submit']))

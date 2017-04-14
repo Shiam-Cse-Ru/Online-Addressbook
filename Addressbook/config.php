@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "phonebook";
+$db = "addressbook";
 
 @mysqli_connect($servername, $username, $password);
 @mysqli_select_db($db);
