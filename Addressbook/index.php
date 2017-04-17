@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<header id="head">
 		<div class="container">
              <div class="heading-text">							
-							<h1 class="animated flipInY delay1">Online Addressbook</h1>
+							<h1 class="animated flipInY delay1">Welcome to Online Addressbook</h1>
 							<p>Store Your Information.</p>
 						</div>
             
