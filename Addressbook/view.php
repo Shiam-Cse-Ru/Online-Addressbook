@@ -1,8 +1,7 @@
 
 <?php session_start();
-$dbcon=mysqli_connect("localhost","root","");
+include 'config.php';
 
-mysqli_select_db($dbcon,"addressbook");
 
 if(!$_SESSION['username'])
 {
@@ -16,6 +15,7 @@ if(!$_SESSION['username'])
 	<title>This is a simple Addressbook.</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+
 
 </head>
 <body>
@@ -63,13 +63,20 @@ if(!$_SESSION['username'])
 				<div class="col-md-12">
 					<div class="header">
 						<h2>View Data</h2>
+
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="content">
 
+					<div class="padding" style=" padding-left: 790px;">
+             <form method="post" action="search.php">
+	        <input type="text" name="search_text" required="" placeholder="search">&nbsp
+	        <button class="btn btn-primary">search</button>
+	        </form><br>
+	        </div>
 						<p>View all your details</p>
-						
+		
 						<table class="table table-striped">
 						  <thead>
 							<tr>
@@ -90,6 +97,8 @@ if(!$_SESSION['username'])
 						  if (isset($_SESSION['username'])) {
 						  	$username=$_SESSION['username'];
 						  }
+
+
 						   $identified = mysqli_query($dbcon,"SELECT id FROM admin WHERE user_name = '$username'");
 						    $row= mysqli_fetch_array($identified);
                             $data=$row['id'];
@@ -98,6 +107,7 @@ if(!$_SESSION['username'])
 							
 							while($row = mysqli_fetch_array($result)){
 								?>
+      
 							<tr>
 							  <th><?php echo $row['firstname'];?></th>
 							    <th><?php echo $row['lastname'];?></th>
@@ -105,6 +115,8 @@ if(!$_SESSION['username'])
 							  <td><?php echo $row['number'];?></td>
 							   <th><?php echo $row['email'];?></th>
 							  <td><?php echo $row['address'];?></td>
+
+
 
 							  <td>
 								<a href="edit.php?id=<?php echo $row['id'];?>">Edit</a>
@@ -122,6 +134,7 @@ if(!$_SESSION['username'])
 										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
 										<h4 class="modal-title" id="myModalLabel">View All your Details</h4>
 									  </div>
+
 									  <div class="modal-body">
 										<ul>
 											<li><h4><span>FirstName : </span> <?php echo $row['firstname'];?></h4></li>
@@ -147,9 +160,19 @@ if(!$_SESSION['username'])
 						  </tbody>
 
 						</table>
+                         <div  style="padding-left: 915px;" >
 						<form action="php_csv_export.php" method="post">
-					<input type="submit" name="submit" value="Download" type="button" class="btn btn-primary active">
+					<input type="submit" name="submit" value="Download" type="button" class="btn btn-primary">
 						</form>
+                  </div>
+
+                  <div >
+					 <form action="importData.php" method="post" enctype="multipart/form-data" id="importFrm">
+                       <input type="file" name="fileToUpload" style="padding-left: 90px;position: absolute; left: 50px;top: 65px;" />
+                       <label for="image upload" class="control-label" style="padding-left: 90px;position: absolute; left:-30px;top: 95px;" >Only .csv file is allowed. </label>
+                      <input type="submit" class="btn btn-primary" name="import" value="IMPORT" style="position: absolute;top: 58px;left: 50px">
+                       </form>
+ 				 </div>
 					</div>
 				</div>
 				<div class="col-md-12 footer-bg">
@@ -165,3 +188,6 @@ if(!$_SESSION['username'])
 
 </body>
 </html>
+
+
+
