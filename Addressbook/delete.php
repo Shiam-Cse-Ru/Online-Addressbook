@@ -1,9 +1,7 @@
 <?php
 
 session_start();
-$dbcon=mysqli_connect("localhost","root","");
-
-mysqli_select_db($dbcon,"addressbook");
+include 'config.php';
 
 if(!$_SESSION['username'])
 {

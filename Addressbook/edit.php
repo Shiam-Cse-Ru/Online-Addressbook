@@ -1,8 +1,6 @@
 <?php
 session_start();
-$dbcon=mysqli_connect("localhost","root","");
-
-mysqli_select_db($dbcon,"addressbook");
+include 'config.php';
 
 if(!$_SESSION['username'])
 {
@@ -21,15 +19,17 @@ if(!$_SESSION['username'])
 
 
 	if(isset($_POST["submit"])){
-	$name= $_POST["name"];
+	$firstname= $_POST["firstname"];
+	$lastname= $_POST["lastname"];
+	$qualification= $_POST["qualification"];
 	$number= $_POST["number"];
 	$email= $_POST["email"];
 	$address = $_POST["address"];
 	//  date_default_timezone_set('Asia/Dacca');
 	// $time=getdate();
-	 $query="UPDATE detail SET name='$name',number='$number',email='$email',address='$address' WHERE id='$id'";
+	 $query="UPDATE detail SET firstname='$firstname',lastname='$lastname',qualification='$qualification',number='$number',email='$email',address='$address' WHERE id='$id'";
     $result=mysqli_query($dbcon,$query);
-    echo "problem";
+  
 
 if($result){
 	$message="Data Update Successfully";
@@ -85,7 +85,7 @@ if($result){
 				
 				<div class="menu">
 					<ul>
-						<li><a href="index.php">Home</a></li>
+						<li><a href="home.php">Home</a></li>
 						<li><a href="insert.php">Insert</a></li>
 						<li><a href="view.php">View</a></li>
 						<li class="current-menu-item"><a href="edit.php" class="disable">Edit</a></li>
@@ -101,7 +101,9 @@ if($result){
 				<?php 
 					$result = mysqli_query($dbcon,"select * from Detail where id='$id'");
 					while($row = mysqli_fetch_array($result)){
-						$name = $row['name'];
+						$firstname = $row['firstname'];
+						$lastname = $row['lastname'];
+						$qualification = $row['qualification'];
 						$number = $row['number'];
 						$email = $row['email'];
 						$address = $row['address'];
@@ -126,8 +128,16 @@ if($result){
 
 						<form action="edit.php" method="POST">
 						  <div class="form-group">
-							<label for="exampleInputName">Name</label>
-							<input type="text" name="name" value="<?php echo $name;?>" class="form-control" id="exampleInputName" required="required">
+							<label for="exampleInputName">FirstName</label>
+							<input type="text" name="firstname" value="<?php echo $firstname;?>" class="form-control" id="exampleInputName" required="required">
+						  </div>
+						   <div class="form-group">
+							<label for="exampleInputName">LastName</label>
+							<input type="text" name="lastname" value="<?php echo $lastname;?>" class="form-control" id="exampleInputName" required="required">
+						  </div>
+						   <div class="form-group">
+							<label for="exampleInputName">Qualification</label>
+							<input type="text" name="qualification" value="<?php echo $qualification;?>" class="form-control" id="exampleInputName" required="required">
 						  </div>
 						  <div class="form-group">
 							<label for="exampleInputp-number">Phone Number</label>
